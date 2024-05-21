@@ -8,3 +8,6 @@ const store = configureStore({
 })
 
 export default store;
+
+
+background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);

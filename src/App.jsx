@@ -209,7 +209,7 @@ const App = () => {
             {
               randomTiles
                 ? randomTiles.map((tile, index) => {
-                  return <div className={'rounded-lg flex justify-center items-center bg-ora h-24 w-20 shadow-md transition-colors delay-200 ' + (isPresentInShow(index) ? 'bg-white' : 'bg-indigo-300')}
+                  return <div className={'rounded-lg flex justify-center items-center h-20 w-16 md:h-24 md:w-20 shadow-md transition-colors delay-200 ' + (isPresentInShow(index) ? 'bg-white' : 'bg-indigo-300')}
                     onClick={() => HandleShow(index, tile.type)}
                     key={index}
                   >
