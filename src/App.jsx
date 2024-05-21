@@ -199,8 +199,8 @@ const App = () => {
   }, [showTile.tileList])
 
   return (
-    <div className='w-full h-screen flex mt-4 flex-col gap-4 justify-center bg-slate-200'>
-      <h3 className='text-2xl font-semibold text-center w-full'>Remembering Game</h3>
+    <div className={'w-full h-screen flex flex-col gap-4 items-center bg-slate-200 '+(isStart ? "justify-start":"justify-center")}>
+      <h3 className={'text-2xl font-semibold text-center w-full '+(isStart? "mt-4":"")}>Remembering Game</h3>
       {
         isStart
           ? <div className="game-box bg-white px-4 py-4 grid grid-cols-4 lg:grid-cols-5 place-content-center rounded-lg shadow-lg gap-x-4 gap-y-4">
