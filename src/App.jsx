@@ -168,7 +168,7 @@ const App = () => {
   const milliseconds = time % 100;
 
   const HandleRestartGame = () => {
-    if(confirm("Are you sure want to restart?")){
+    if (confirm("Are you sure want to restart?")) {
       shuffleTiles();
       dispatch(clearTile());
       setTime(0);
@@ -178,31 +178,34 @@ const App = () => {
     setIsRunning(true);
     shuffleTiles();
     setIsStart(true);
+    
   }
   const HandleHome = () => {
-    setIsStart(false);
-    shuffleTiles();
-    dispatch(clearTile());
-    setIsRunning(false);
-    setTime(0);
+    if (confirm("Your progress will be lost if you leave...\nAre you sure want to go to main menu?")) {
+      setIsStart(false);
+      shuffleTiles();
+      dispatch(clearTile());
+      setIsRunning(false);
+      setTime(0);
+    }
   }
 
-  useEffect(()=>{
-    if(showTile.tileList.length===20){
+  useEffect(() => {
+    if (showTile.tileList.length === 20) {
       alert("You win!!!");
       setBestTime(`${hours}:${minutes.toString().padStart(2, "0")}:
       ${seconds.toString().padStart(2, "0")}:
       ${milliseconds.toString().padStart(2, "0")}`);
       HandleHome();
     }
-  },[showTile.tileList])
+  }, [showTile.tileList])
 
   return (
     <div className='w-full h-screen flex items-center flex-col gap-4 justify-center bg-slate-200'>
       <h3 className='text-2xl font-semibold text-center w-full'>Remembering Game</h3>
       {
         isStart
-          ? <div className="game-box bg-white px-4 py-4 grid grid-cols-5 place-content-center rounded-lg shadow-lg gap-x-4 gap-y-4">
+          ? <div className="game-box bg-white px-4 py-4 grid grid-cols-4 lg:grid-cols-5 place-content-center rounded-lg shadow-lg gap-x-4 gap-y-4">
             {
               randomTiles
                 ? randomTiles.map((tile, index) => {
