@@ -6,5 +6,4 @@ const store = configureStore({
         tile: tileReducer,
     }
 })
-
 export default store;
