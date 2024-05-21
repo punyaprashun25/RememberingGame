@@ -199,7 +199,7 @@ const App = () => {
   }, [showTile.tileList])
 
   return (
-    <div className='w-full h-screen flex items-center flex-col gap-4 justify-center bg-slate-200'>
+    <div className='w-full h-screen flex mt-4 flex-col gap-4 justify-center bg-slate-200'>
       <h3 className='text-2xl font-semibold text-center w-full'>Remembering Game</h3>
       {
         isStart
