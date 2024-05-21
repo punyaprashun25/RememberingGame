@@ -181,13 +181,11 @@ const App = () => {
     
   }
   const HandleHome = () => {
-    if (confirm("Your progress will be lost if you leave...\nAre you sure want to go to main menu?")) {
       setIsStart(false);
       shuffleTiles();
       dispatch(clearTile());
       setIsRunning(false);
       setTime(0);
-    }
   }
 
   useEffect(() => {
